@@ -1,10 +1,10 @@
-let curs = document.querySelector(".cursor")
+// let curs = document.querySelector(".cursor")
 
-document.addEventListener("mousemove", function(dets) {
-    curs.style.left = dets.x+"px"
-    curs.style.top = dets.y+"px"
-    // console.log(dets)
-})
+// document.addEventListener("mousemove", function(dets) {
+//     curs.style.left = dets.x+"px"
+//     curs.style.top = dets.y+"px"
+//     // console.log(dets)
+// })
 
 
 // Trendings
@@ -44,7 +44,27 @@ document.querySelector(".card-sec").innerHTML = card
 let topicsDis = ["AI", "Travels", "Food", "Blogs", "JavaScript", "AI", "Travels", "Food", "Blogs", "JavaScript"]
 let topics = ""
 topicsDis.forEach((e) => {
-    console.log(e)
     topics += `<button class="btn">${e}</button>`
 })
 document.querySelector(".btn3-sec").innerHTML = document.querySelector(".btn3-sec").innerHTML + topics
+// Login
+const loginForm = document.querySelector(".login")
+const formCont = document.querySelector(".formCont")
+document.querySelector(".loginBtn").addEventListener("click", (e) => {
+    formCont.style.display = "flex"
+})
+
+document.querySelector(".cross").addEventListener("click", (e) => {
+    formCont.style.display = "none"
+})
+
+loginForm.addEventListener("submit", (e) => {
+    e.preventDefault()
+    let username = document.querySelector("#username").value
+    let passsword = document.querySelector("#password").value
+    if (username == "" && passsword == ""){
+        alert("Insert Value")
+    }else{
+        alert("Thanks")
+    }
+});
